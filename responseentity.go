@@ -30,7 +30,7 @@ func (entity ResponseEntity) toJson() (string, error) {
 	return string(bytes), err
 }
 
-func (entity ResponseEntity) toApiGatewayProxyResponse() events.APIGatewayProxyResponse {
+func (entity ResponseEntity) ToApiGatewayProxyResponse() events.APIGatewayProxyResponse {
 	jsonStr, err := entity.toJson()
 
 	if err != nil {
