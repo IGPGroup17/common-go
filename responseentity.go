@@ -6,10 +6,10 @@ import (
 )
 
 var (
-	headers = map[string]string {
-		"Content-Type": "application/json",
+	headers = map[string]string{
+		"Content-Type":    "application/json",
 		"X-Custom-Header": "application/json",
-}
+	}
 	JsonMarshalResponse = events.APIGatewayProxyResponse{
 		StatusCode:        INTERNAL_SERVER_ERROR.Code,
 		Headers:           headers,
@@ -21,7 +21,7 @@ var (
 
 type ResponseEntity struct {
 	ResponseObject interface{}
-	Status         status
+	Status         Status
 	Error          error
 }
 
