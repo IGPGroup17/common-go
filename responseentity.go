@@ -10,7 +10,7 @@ var (
 		"Content-Type": "application/json",
 		"X-Custom-Header": "application/json",
 }
-	JSON_Marshal_Response = events.APIGatewayProxyResponse{
+	JsonMarshalResponse = events.APIGatewayProxyResponse{
 		StatusCode:        INTERNAL_SERVER_ERROR.Code,
 		Headers:           headers,
 		MultiValueHeaders: nil,
@@ -34,7 +34,7 @@ func (entity ResponseEntity) toApiGatewayProxyResponse() events.APIGatewayProxyR
 	jsonStr, err := entity.toJson()
 
 	if err != nil {
-		return JSON_Marshal_Response
+		return JsonMarshalResponse
 	} else {
 		return events.APIGatewayProxyResponse{
 			StatusCode:        entity.Status.Code,
